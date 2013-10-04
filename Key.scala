@@ -49,7 +49,7 @@ class Value [T] (value : T) extends Expression[T] {
   override def toString() = s"$value"
 }
 
-class Computation[T] (left : Key[T], right : Expression[T]) extends Expression[T] {
+class Predicate[T] (left : Key[T], right : Expression[T]) extends Expression[T] {
   def eval (value : T) : Boolean = {
     left prepareWith value applyTo right
   }

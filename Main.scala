@@ -1,15 +1,15 @@
 object Main {
   def main(args: Array[String]) {
-    val node : Computation[Int] = new Computation(
+    val predicate : Predicate[Int] = new Predicate(
       new Field("a"),
-      new Computation(gt, new Value(5))
+      new Predicate(gt, new Value(5))
     )
 
     val n = 3
 
-    println(node)
-    print(s"node eval $n = ")
-    println(node eval n)
+    println(predicate)
+    print(s"predicate eval $n = ")
+    println(predicate eval n)
   }
 
   def _gt (left : Int, right : Expression[Int]) : Boolean = {
